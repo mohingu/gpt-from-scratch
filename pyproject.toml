@@ -1,0 +1,7 @@
+[project]
+name = "gpt-from-scratch"
+version = "0.1.0"
+description = "A small GPT implemented from scratch in PyTorch (Karpathy's Zero to Hero)"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = []
