@@ -11,3 +11,29 @@ dependencies = [
     "numpy>=2.4.6",
     "torch>=2.12.0",
 ]
+
+[tool.uv]
+# Supply-chain cooldown: never resolve packages published in the last ~7 days.
+# Bump this date deliberately when you want to pull in newer releases.
+exclude-newer = "2026-06-06T00:00:00Z"
+
+[dependency-groups]
+dev = [
+    "nbstripout>=0.9.1",
+    "pre-commit>=4.6.0",
+    "ruff>=0.15.16",
+]
+
+[tool.ruff]
+target-version = "py312"
+line-length = 88
+
+[tool.ruff.lint]
+select = [
+    "E",   # pycodestyle errors
+    "F",   # pyflakes
+    "I",   # isort
+    "UP",  # pyupgrade
+    "B",   # flake8-bugbear
+    "SIM", # flake8-simplify
+]
