@@ -27,6 +27,10 @@ dev = [
 [tool.ruff]
 target-version = "py312"
 line-length = 88
+# Notebooks are learning scratchpads (code-along); don't hold them to production lint
+# rules. Linting applies to the .py modules. nbstripout still strips notebook outputs.
+extend-exclude = ["*.ipynb"]
+force-exclude = true
 
 [tool.ruff.lint]
 select = [
