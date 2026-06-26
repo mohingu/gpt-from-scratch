@@ -21,8 +21,15 @@ exclude-newer = "2026-06-06T00:00:00Z"
 dev = [
     "nbstripout>=0.9.1",
     "pre-commit>=4.6.0",
+    "pytest>=9.0.3",
     "ruff>=0.15.16",
 ]
+
+[tool.pytest.ini_options]
+# The project isn't pip-installed (no build backend), so add the repo root to the path
+# for `import components...` and keep test discovery scoped to tests/.
+pythonpath = ["."]
+testpaths = ["tests"]
 
 [tool.ruff]
 target-version = "py312"
