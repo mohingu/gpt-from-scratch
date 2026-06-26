@@ -8,11 +8,13 @@ objective, self-attention - is built by hand before relying on the framework ver
 
 ## Components
 
-1. **`micrograd/`** - a minimal scalar autograd engine and backpropagation, plus a tiny MLP
-   trained with it.
-2. **`bigram/`** - a character-level bigram language model: the simplest possible
+Each component is a self-contained package under `components/`, landing in this order:
+
+1. **`components/micrograd/`** - a minimal scalar autograd engine and backpropagation, plus a
+   tiny MLP trained with it.
+2. **`components/bigram/`** - a character-level bigram language model: the simplest possible
    next-token predictor, with sampling and NLL loss.
-3. **`gpt/`** - the main event: a decoder-only transformer (single-head -> multi-head
+3. **`components/gpt/`** - the main event: a decoder-only transformer (single-head -> multi-head
    self-attention -> blocks with residuals + layernorm), trained on tiny Shakespeare
    (~10M parameters, runs on Apple Silicon or a free Colab GPU).
 
